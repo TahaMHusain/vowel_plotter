@@ -1,12 +1,11 @@
 from pathlib import Path
 
-import parselmouth
-from parselmouth import praat
+from parselmouth import praat, Sound
 
 
 def get_formants(path: str):
 
-    sound = parselmouth.Sound(str(Path(path).resolve()))
+    sound = Sound(str(Path(path).resolve()))
 
     f0min = 75
     f0max = 300
@@ -40,3 +39,8 @@ def get_formants(path: str):
         f3_list.append(f3)
 
     return f0_list, f1_list, f2_list, f3_list
+
+
+if __name__ == '__main__':
+    path = './data/a.wav'
+    print(get_formants(path))
