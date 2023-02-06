@@ -43,4 +43,7 @@ def get_formants(path: str):
 
 if __name__ == '__main__':
     path = './data/a.wav'
-    print(get_formants(path))
+    f0_list, f1_list, f2_list, f3_list = get_formants(path)
+    print(f'F0:\n{f0_list}'
+          f'\n\nF1:\n{f1_list}'
+          f'\n\nF2:\n{f2_list}')
