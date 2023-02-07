@@ -44,7 +44,7 @@ def main(sound_path: str, textgrid_path: str, output_path: str = None, reps: int
 
         for vowel, formant_dict in median_formants.items():
             for i in range(reps):
-                writer.writerow([vowel, formant_dict['f1'][i], formant_dict['f2'][i]])
+                writer.writerow([ascii2ipa[vowel], formant_dict['f1'][i], formant_dict['f2'][i]])
 
 if __name__ == '__main__':
     main('data/corpus/speaker1.wav', 'data/corpus_aligned/speaker1.TextGrid')
