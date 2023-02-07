@@ -21,7 +21,9 @@ vowels <- read.csv(args[1])
 # Create ggplot  
 graph <- ggplot(data = vowels, aes(x = F2, y = F1, color = vowel, label = vowel)) +
   geom_text() +
-  theme_classic()
+  theme_classic() +
+  scale_x_reverse() + 
+  scale_y_reverse()
 
 # Save ggplot
 ggsave(file = graph_outpath, plot = graph, width = 10, height = 8)

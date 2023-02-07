@@ -5,8 +5,8 @@ from parselmouth import praat, Sound
 
 def get_formants(sound: Sound):
 
-    f0min = 75
-    f0max = 300
+    f0min = 75 # 75 Hz default
+    f0max = 500 # 300 Hz default
     timestep = 0.0025
     num_formants = 5
     formant_ceiling = 5000
@@ -41,7 +41,7 @@ def get_formants(sound: Sound):
 
 if __name__ == '__main__':
     path = './data/a.wav'
-    f0_list, f1_list, f2_list, f3_list = get_formants(path)
+    f0_list, f1_list, f2_list, f3_list = get_formants(Sound(path))
     print(f'F0:\n{f0_list}'
           f'\n\nF1:\n{f1_list}'
           f'\n\nF2:\n{f2_list}')
