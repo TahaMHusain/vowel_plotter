@@ -3,9 +3,7 @@ from pathlib import Path
 from parselmouth import praat, Sound
 
 
-def get_formants(path: str):
-
-    sound = Sound(str(Path(path).resolve()))
+def get_formants(sound: Sound):
 
     f0min = 75
     f0max = 300

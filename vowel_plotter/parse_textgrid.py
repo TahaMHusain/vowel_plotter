@@ -3,8 +3,6 @@ from collections import defaultdict
 
 from praatio import textgrid
 
-from get_formants import get_formants
-
 
 DEFAULT_VOWELS = {'IY1', 'IH1', 'EY1', 'EH1', 'AE1', 'AA1', 'OW1', 'AH1', 'UH1', 'UW1'}
 
