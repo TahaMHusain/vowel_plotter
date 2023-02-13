@@ -11,8 +11,8 @@ def parse_textgrid(path: str, vowel_set: set = None) -> dict[str: list]:
     if not vowel_set:
         vowel_set = DEFAULT_VOWELS
     tg = textgrid.openTextgrid(Path(path), False)
-    vowel_tier = tg.tierDict['phones']
-    for start, end, phone in vowel_tier.entryList:
+    vowel_tier = tg.getTier('phones')
+    for start, end, phone in vowel_tier.entries:
         if phone in vowel_set:
             vowel_times[phone].append((start, end))
 
