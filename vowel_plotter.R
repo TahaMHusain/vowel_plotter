@@ -14,6 +14,7 @@ if (length(args) != 1) {
 
 # Set path to save ggplot
 graph_outpath <- paste(substr(args[1], 1, nchar(args[1]) - 4), ".svg", sep = "")
+graph_outpath_png <- paste(substr(args[1], 1, nchar(args[1]) - 4), ".png", sep = "")
 
 # Load csv into dataframe
 vowels <- read.csv(args[1])
@@ -27,3 +28,4 @@ graph <- ggplot(data = vowels, aes(x = F2, y = F1, color = vowel, label = vowel)
 
 # Save ggplot
 ggsave(file = graph_outpath, plot = graph, width = 10, height = 8)
+ggsave(file = graph_outpath_png, plot = graph, device="png", width = 5, height = 4)

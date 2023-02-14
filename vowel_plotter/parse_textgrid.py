@@ -6,6 +6,7 @@ from praatio import textgrid
 
 DEFAULT_VOWELS = {'IY1', 'IH1', 'EY1', 'EH1', 'AE1', 'AA1', 'OW1', 'AH1', 'UH1', 'UW1'}
 
+
 def parse_textgrid(path: str, vowel_set: set = None) -> dict[str: list]:
     vowel_times = defaultdict(list)
     if not vowel_set:

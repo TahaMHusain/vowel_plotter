@@ -10,6 +10,6 @@ def align(corpus_path: str, dictionary_path: str, acoustic_model_path: str, outp
 
     check_databases()
     aligner.align()
-    aligner.export_files(output_directory)
+    aligner.export_files(output_directory, output_format='long_textgrid')
     aligner.cleanup()
     cleanup_databases()

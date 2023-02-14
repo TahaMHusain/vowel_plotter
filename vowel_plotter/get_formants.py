@@ -5,7 +5,7 @@ from parselmouth import praat, Sound
 
 def get_formants(sound: Sound):
 
-    f0min = 75 # 75 Hz default
+    f0min = 100 # 75 Hz default
     f0max = 500 # 300 Hz default
     timestep = 0.0025
     num_formants = 5
