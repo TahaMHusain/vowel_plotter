@@ -1,0 +1,2 @@
+/home/Mark/.conda/envs/vowel_plotter/bin/compute-cmvn-stats --spk2utt=ark:/home/Mark/Documents/MFA/corpus2/corpus2/spk2utt.scp scp:/home/Mark/Documents/MFA/corpus2/corpus2/feats.scp ark,scp:/home/Mark/Documents/MFA/corpus2/corpus2/cmvn.ark,/home/Mark/Documents/MFA/corpus2/corpus2/cmvn.scp 
+LOG (compute-cmvn-stats[5.5.1016]:main():featbin/compute-cmvn-stats.cc:171) Done accumulating CMVN stats for 1 utterances; 0 had errors.

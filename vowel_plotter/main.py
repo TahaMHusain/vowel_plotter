@@ -1,21 +1,18 @@
+import os
+import shutil
+import random
 from collections import defaultdict
 from pathlib import Path
-import csv
-import subprocess
-from io import BytesIO
-from PIL import Image
-
-from cairosvg import svg2png
-import cv2
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
 
 import numpy as np
+import pandas as pd
 
-from align import align
-from parse_textgrid import parse_textgrid
-from extract_vowels import extract_vowels
+from vowel_plotter.align import align
+from vowel_plotter.parse_textgrid import parse_textgrid
+from vowel_plotter.extract_vowels import extract_vowels
+from vowel_plotter.draw_plot import draw_plot
 
+# Translate ARPA symbols to IPA
 arpa2ipa = {
     'IY1': 'i',
     'IH1': 'ɪ',
@@ -30,55 +27,67 @@ arpa2ipa = {
 }
 
 
-def main(output_path: str = None,
-         reps: int = 3,
+def main(sound_path: str,
          corpus_path: str = None,
-         dictionary_path: str = '/home/Mark/Documents/MFA/pretrained_models/dictionary/english_us_arpa.dict',
-         acoustic_path: str = '/home/Mark/Documents/MFA/pretrained_models/acoustic/english_us_arpa.zip',
+         dictionary_path: str = None,
+         acoustic_path: str = None,
          aligned_path: str = None):
-    speaker = '2'
+    if not dictionary_path:
+        if os.path.exists('data/MFA/pretrained_models/dictionary/english_us_arpa.dict'):
+            dictionary_path = 'data/MFA/pretrained_models/dictionary/english_us_arpa.dict'
+        elif os.path.exists('../data/MFA/pretrained_models/dictionary/english_us_arpa.dict'):
+            dictionary_path = '../data/MFA/pretrained_models/dictionary/english_us_arpa.dict'
+        else:
+            raise ValueError('Dictionary not found')
+
+    if not acoustic_path:
+        if os.path.exists('data/MFA/pretrained_models/acoustic/english_us_arpa.zip'):
+            acoustic_path = 'data/MFA/pretrained_models/acoustic/english_us_arpa.zip'
+        elif os.path.exists('../data/MFA/pretrained_models/acoustic/english_us_arpa.zip'):
+            acoustic_path = '../data/MFA/pretrained_models/acoustic/english_us_arpa.zip'
+        else:
+            raise ValueError('Acoustic model not found')
 
     if not corpus_path:
-        corpus_path = f'data/corpus{speaker}'
+        # MFA won't rerun alignment unless the folder is a different name from last time >:(
+        randy = random.randint(1, 100)
+        corpus_path = f'data/corpus_{randy}'
+    if not os.path.exists(corpus_path):
+        os.makedirs(corpus_path)
+        shutil.copy2('data/transcript.lab', os.path.join(corpus_path, 'speaker1.lab'))
+
+    if not os.path.exists(os.path.join(corpus_path, 'speaker1.wav')):
+        shutil.copy2(sound_path, os.path.join(corpus_path, 'speaker1.wav'))
+
     if not aligned_path:
-        aligned_path = corpus_path + f'{speaker}_aligned'
+        aligned_path = corpus_path + f'_aligned'
+    if not os.path.exists(aligned_path):
+        os.makedirs(aligned_path)
 
     align(corpus_path, dictionary_path, acoustic_path, aligned_path)
 
+    textgrid_path = Path(aligned_path).joinpath(f'speaker1.TextGrid')
 
-
-    sound_path = Path(corpus_path).joinpath(f'speaker{speaker}.wav')
-    textgrid_path = Path(aligned_path).joinpath(f'speaker{speaker}.TextGrid')
-
-    if not output_path:
-        output_path = Path(f'data/{Path(sound_path).stem}.csv')
     vowel_times = parse_textgrid(textgrid_path)
     vowels_formants = extract_vowels(sound_path, vowel_times)
+    table = pd.DataFrame(columns=['vowel', 'F1', 'F2'])
 
     median_formants = defaultdict(lambda: defaultdict(list))
     for vowel, formants_tuple_list in vowels_formants.items():
         for formants_tuple in formants_tuple_list:
+            formants_row = {}
             for i, formant_list in enumerate(formants_tuple):
                 median = np.nanmedian(formant_list, axis=0)
                 median_formants[vowel][f'f{i}'].append(median)
+                formants_row[f'f{i}'] = median
+            table = pd.concat([table, pd.Series(
+                {'vowel': arpa2ipa[vowel], 'F1': formants_row['f1'], 'F2': formants_row['f2']}).to_frame().T],
+                              ignore_index=True)
 
-    with open(output_path, 'w', newline='', encoding='utf8') as f:
-        writer = csv.writer(f)
-
-        # Header row
-        writer.writerow(['vowel', 'F1', 'F2'])
-
-        for vowel, formant_dict in median_formants.items():
-            for i in range(reps):
-                writer.writerow([arpa2ipa[vowel], formant_dict['f1'][i], formant_dict['f2'][i]])
-
-    subprocess.call(f'/usr/bin/Rscript vowel_plotter.R data/speaker{speaker}.csv', shell=True)
-
-    img = cv2.imread(f'data/speaker{speaker}.png')
-    # img = cv2.resize(img, (960, 540))
-    cv2.imshow('image', img)
-    cv2.waitKey(0)
+    shutil.rmtree(corpus_path)
+    shutil.rmtree(aligned_path)
+    draw_plot(table)
 
 
 if __name__ == '__main__':
-    main()
+    main('data/corpus')

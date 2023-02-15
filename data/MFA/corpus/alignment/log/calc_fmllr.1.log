@@ -1,0 +1,22 @@
+/home/Mark/.conda/envs/vowel_plotter/bin/ali-to-post ark,s,cs:/home/Mark/Documents/MFA/corpus/alignment/ali.1.1.ark ark:- 
+/home/Mark/.conda/envs/vowel_plotter/bin/weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 /home/Mark/Documents/MFA/corpus/alignment/final.alimdl ark,s,cs:- ark:- 
+/home/Mark/.conda/envs/vowel_plotter/bin/gmm-post-to-gpost /home/Mark/Documents/MFA/corpus/alignment/final.alimdl 'ark,s,cs:splice-feats --left-context=3 --right-context=3 scp,s,cs:"/home/Mark/Documents/MFA/corpus/corpus/split3/feats.1.1.scp" ark:- | transform-feats "/home/Mark/Documents/MFA/corpus/alignment/lda.mat" ark:- ark:- |' ark,s,cs:- ark:- 
+LOG (ali-to-post[5.5.1016]:main():bin/ali-to-post.cc:73) Converted 1 alignments.
+LOG (weight-silence-post[5.5.1016]:main():bin/weight-silence-post.cc:95) Done 1 posteriors.
+transform-feats /home/Mark/Documents/MFA/corpus/alignment/lda.mat ark:- ark:- 
+splice-feats --left-context=3 --right-context=3 scp,s,cs:/home/Mark/Documents/MFA/corpus/corpus/split3/feats.1.1.scp ark:- 
+LOG (transform-feats[5.5.1016]:main():featbin/transform-feats.cc:158) Overall average [pseudo-]logdet is -89.6349 over 3543 frames.
+LOG (transform-feats[5.5.1016]:main():featbin/transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
+LOG (gmm-post-to-gpost[5.5.1016]:main():gmmbin/gmm-post-to-gpost.cc:124) Done 1 files, 0 with no posteriors, 0 with other errors.
+LOG (gmm-post-to-gpost[5.5.1016]:main():gmmbin/gmm-post-to-gpost.cc:128) Overall avg like per frame (Gaussian only) = -46.9295 over 1275 frames.
+LOG (gmm-post-to-gpost[5.5.1016]:main():gmmbin/gmm-post-to-gpost.cc:131) Done converting post to gpost
+/home/Mark/.conda/envs/vowel_plotter/bin/gmm-est-fmllr-gpost --verbose=4 --fmllr-update-type=full --spk2utt=ark:/home/Mark/Documents/MFA/corpus/corpus/split3/spk2utt.1.1.scp /home/Mark/Documents/MFA/corpus/alignment/final.mdl 'ark,s,cs:splice-feats --left-context=3 --right-context=3 scp,s,cs:"/home/Mark/Documents/MFA/corpus/corpus/split3/feats.1.1.scp" ark:- | transform-feats "/home/Mark/Documents/MFA/corpus/alignment/lda.mat" ark:- ark:- |' ark,s,cs:- ark:/home/Mark/Documents/MFA/corpus/alignment/trans.1.1.ark 
+splice-feats --left-context=3 --right-context=3 scp,s,cs:/home/Mark/Documents/MFA/corpus/corpus/split3/feats.1.1.scp ark:- 
+transform-feats /home/Mark/Documents/MFA/corpus/alignment/lda.mat ark:- ark:- 
+LOG (transform-feats[5.5.1016]:main():featbin/transform-feats.cc:158) Overall average [pseudo-]logdet is -89.6349 over 3543 frames.
+LOG (transform-feats[5.5.1016]:main():featbin/transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
+LOG (gmm-est-fmllr-gpost[5.5.1016]:ComputeFmllrMatrixDiagGmmFull():transform/fmllr-diag-gmm.cc:262) fMLLR objf improvement is 13.6811 per frame over 1275 frames.
+LOG (gmm-est-fmllr-gpost[5.5.1016]:main():gmmbin/gmm-est-fmllr-gpost.cc:141) For speaker 1, auxf-impr from fMLLR is 13.6811, over 1275 frames.
+
+LOG (gmm-est-fmllr-gpost[5.5.1016]:main():gmmbin/gmm-est-fmllr-gpost.cc:186) Done 1 files, 0 with no gposts, 0 with other errors.
+LOG (gmm-est-fmllr-gpost[5.5.1016]:main():gmmbin/gmm-est-fmllr-gpost.cc:188) Overall fMLLR auxf impr per frame is 13.6811 over 1275 frames.

@@ -3,7 +3,7 @@ from collections import defaultdict
 
 from parselmouth import Sound
 
-from get_formants import get_formants
+from vowel_plotter.get_formants import get_formants
 
 def extract_vowels(path:str, vowel_times: dict) -> dict[str: list]:
     all_vowel_formants = defaultdict(list)

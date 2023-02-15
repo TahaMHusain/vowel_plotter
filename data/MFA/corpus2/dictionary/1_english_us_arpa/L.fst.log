@@ -1,0 +1,4 @@
+Phone isymbols: /home/Mark/Documents/MFA/corpus2/dictionary/phones/phones.txt
+Word osymbols: /home/Mark/Documents/MFA/corpus2/dictionary/1_english_us_arpa/words.txt
+/home/Mark/.conda/envs/vowel_plotter/bin/fstcompile --isymbols=/home/Mark/Documents/MFA/corpus2/dictionary/phones/phones.txt --osymbols=/home/Mark/Documents/MFA/corpus2/dictionary/1_english_us_arpa/words.txt --keep_isymbols=false --keep_osymbols=false --keep_state_numbering=true /home/Mark/Documents/MFA/corpus2/dictionary/1_english_us_arpa/lexicon.text_fst
+/home/Mark/.conda/envs/vowel_plotter/bin/fstarcsort --sort_type=olabel - /home/Mark/Documents/MFA/corpus2/dictionary/1_english_us_arpa/L.fst

@@ -1,0 +1,3 @@
+/home/Mark/.conda/envs/vowel_plotter/bin/subset-feats --n=1 'ark,s,cs:add-deltas scp,s,cs:"/home/Mark/Documents/MFA/corpus/corpus/split3/feats.1.1.scp" ark:- |' ark:/home/Mark/Documents/MFA/corpus/corpus/split3/temp.ark 
+add-deltas scp,s,cs:/home/Mark/Documents/MFA/corpus/corpus/split3/feats.1.1.scp ark:- 
+/home/Mark/.conda/envs/vowel_plotter/bin/feat-to-dim ark:/home/Mark/Documents/MFA/corpus/corpus/split3/temp.ark - 

@@ -1,0 +1,147 @@
+- command: /home/Mark/.conda/envs/vowel_plotter/bin/mfa model download english_us_arpa
+  date: 2023-02-08 11:14:52.163996
+  exception: ''
+  execution_time: 0.05750155448913574
+  exit_code: 2
+  version: 2.1.2
+- command: /home/Mark/.conda/envs/vowel_plotter/bin/mfa model download acoustic english_us_arpa
+  date: 2023-02-08 11:15:28.753474
+  exception: ''
+  execution_time: 27.00130605697632
+  exit_code: 0
+  version: 2.1.2
+- command: /home/Mark/.conda/envs/vowel_plotter/bin/mfa model download dictionary
+    english_us_arpa
+  date: 2023-02-08 11:16:13.674210
+  exception: ''
+  execution_time: 3.5053296089172363
+  exit_code: 0
+  version: 2.1.2
+- command: /home/Mark/.conda/envs/vowel_plotter/bin/mfa validate data/corpus english_us_arpa
+    english_us_arpa
+  date: 2023-02-08 11:16:36.345957
+  exception: ''
+  execution_time: 149.5514943599701
+  exit_code: 0
+  version: 2.1.2
+- command: /home/Mark/.conda/envs/vowel_plotter/bin/mfa align data/corpus english_us_arpa
+    english_us_arpa data/corpus_aligned_test
+  date: 2023-02-08 11:24:52.346366
+  exception: ''
+  execution_time: 16.800272941589355
+  exit_code: 0
+  version: 2.1.2
+- command: /home/Mark/.conda/envs/vowel_plotter/bin/mfa model list acoustic
+  date: 2023-02-13 15:56:22.653886
+  exception: ''
+  execution_time: 0.09804844856262207
+  exit_code: 0
+  version: 2.1.2
+- command: /home/Mark/.conda/envs/vowel_plotter/bin/mfa validate data/corpus english_us_arpa
+    english_us_arpa
+  date: 2023-02-13 16:15:02.131430
+  exception: ''
+  execution_time: 149.77464079856873
+  exit_code: 0
+  version: 2.1.2
+- command: /home/Mark/.conda/envs/vowel_plotter/bin/mfa model inspect dictionary english_us_arpa
+  date: 2023-02-13 16:19:26.375016
+  exception: ''
+  execution_time: 0.06761693954467773
+  exit_code: 1
+  version: 2.1.2
+- command: /home/Mark/.conda/envs/vowel_plotter/bin/mfa model inspect dictionary english_us_arpa
+  date: 2023-02-13 16:19:31.742494
+  exception: ''
+  execution_time: 0.06696319580078125
+  exit_code: 1
+  version: 2.1.2
+- command: /home/Mark/.conda/envs/vowel_plotter/bin/mfa model list acoustic
+  date: 2023-02-13 16:19:39.605549
+  exception: ''
+  execution_time: 0.06129121780395508
+  exit_code: 0
+  version: 2.1.2
+- command: /home/Mark/.conda/envs/vowel_plotter/bin/mfa model inspect acoustic english_us_arpa
+  date: 2023-02-13 16:19:50.528641
+  exception: ''
+  execution_time: 0.4768409729003906
+  exit_code: 0
+  version: 2.1.2
+- command: /home/Mark/.conda/envs/vowel_plotter/bin/mfa align data/corpus english_us_arpa
+    english_us_arpa data/corpus_aligned
+  date: 2023-02-13 16:30:19.836362
+  exception: ''
+  execution_time: 15.87832522392273
+  exit_code: 0
+  version: 2.1.2
+- command: /home/Mark/.conda/envs/vowel_plotter/bin/mfa align data/corpus english_us_arpa
+    english_us_arpa data/corpus_aligned
+  date: 2023-02-13 16:43:00.974722
+  exception: ''
+  execution_time: 39.58218717575073
+  exit_code: 1
+  version: 2.1.2
+- command: /home/Mark/.conda/envs/vowel_plotter/bin/mfa validate /home/Mark/mfa_data/my_corpus
+    english_us_arpa english_us_arpa
+  date: 2023-02-13 16:44:08.531990
+  exception: ''
+  execution_time: 0.05943870544433594
+  exit_code: 2
+  version: 2.1.2
+- command: /home/Mark/.conda/envs/vowel_plotter/bin/mfa validate data/corpus english_us_arpa
+    english_us_arpa
+  date: 2023-02-13 16:44:19.066205
+  exception: ''
+  execution_time: 148.0982301235199
+  exit_code: 0
+  version: 2.1.2
+- command: /home/Mark/.conda/envs/vowel_plotter/bin/mfa align data/corpus english_us_arpa
+    english_us_arpa data/corpus_aligned
+  date: 2023-02-13 16:46:54.862825
+  exception: ''
+  execution_time: 16.892878770828247
+  exit_code: 0
+  version: 2.1.2
+- command: /home/Mark/.conda/envs/vowel_plotter/bin/mfa align data/corpus english_us_arpa
+    english_us_arpa data/corpus_aligned
+  date: 2023-02-13 17:58:49.847304
+  exception: ''
+  execution_time: 3.7241663932800293
+  exit_code: 0
+  version: 2.1.2
+- command: /home/Mark/.conda/envs/vowel_plotter/bin/mfa align data/corpus english_us_arpa
+    english_us_arpa data/corpus_aligned
+  date: 2023-02-13 18:01:34.235544
+  exception: ''
+  execution_time: 3.722702741622925
+  exit_code: 0
+  version: 2.1.2
+- command: /home/Mark/.conda/envs/vowel_plotter/bin/mfa align data/corpus english_us_arpa
+    english_us_arpa data/corpus_aligned
+  date: 2023-02-13 18:16:54.639360
+  exception: ''
+  execution_time: 3.710667371749878
+  exit_code: 0
+  version: 2.1.2
+- command: /home/Mark/.conda/envs/vowel_plotter/bin/mfa align data/corpus english_us_arpa
+    english_us_arpa data/corpus_aligned --ignore_cache
+  date: 2023-02-13 18:17:05.369577
+  exception: ''
+  execution_time: 3.7281007766723633
+  exit_code: 0
+  version: 2.1.2
+- command: /home/Mark/.conda/envs/vowel_plotter/bin/mfa align --ignore_cache data/corpus
+    english_us_arpa english_us_arpa data/corpus_aligned
+  date: 2023-02-13 18:17:18.781492
+  exception: ''
+  execution_time: 0.06186485290527344
+  exit_code: 2
+  version: 2.1.2
+- command: /home/Mark/.conda/envs/vowel_plotter/bin/mfa align data/corpus2 english_us_arpa
+    english_us_arpa data/corpus2_aligned
+  date: 2023-02-13 19:48:06.633483
+  exception: ''
+  execution_time: 52.02269673347473
+  exit_code: 0
+  version: 2.1.2
