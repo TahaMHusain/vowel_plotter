@@ -4,12 +4,13 @@ Extract and plot the F1 and F2 frequencies from a recording of speech.
 
 ### How to Run
 
-First, setup your Python environment
+First, set up your Python environment
 
 ```commandline
 git clone https://github.com/TahaMHusain/vowel_plotter.git
 cd vowel_plotter
-pip install -r requirements.txt  # An 'environment.yml' file is provided for conda users
+conda env create -f environment.yml  # If you don't use conda, you'll have to make the environment some other way
+conda activate vowel_plotter
 ```
 
 You can then test the environment by running on sample data:
