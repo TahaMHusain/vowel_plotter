@@ -22,6 +22,7 @@ After a minute or so, you should see a multicolored chart like this appear in a 
 
 
 
+### Plot your own vowels
 To plot your own vowels, first record yourself saying the following words three times each.
 
 |   |   |   |   |   |   |   |   |   |   |
