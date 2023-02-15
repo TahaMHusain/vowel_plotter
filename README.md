@@ -4,15 +4,23 @@ Extract and plot the F1 and F2 frequencies from a recording of speech.
 
 ### How to Run
 
-First, set up your Python environment
-
+First, clone the repo: 
 ```commandline
 git clone https://github.com/TahaMHusain/vowel_plotter.git
 cd vowel_plotter
-conda env create -f environment.yml  # If you don't use conda, you'll have to make the environment some other way
+```
+Then set up your Python environment:
+
+```commandline
+conda env create -f environment.yml
 conda activate vowel_plotter
 ```
-
+You'll need to use `conda` to install `montreal-forced-aligner`. If the `environment.yml` file doesn't work, you can build the environment on your own:
+```commandline
+conda create -n vowel_plotter -c conda-forge python=3.10 montreal-forced-aligner matplotlib pandas
+conda activate vowel_plotter
+pip install praat-parselmouth
+```
 You can then test the environment by running on sample data:
 ```commandline
 python vowel_plotter.py data/sample_vowels.wav

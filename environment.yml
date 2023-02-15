@@ -1,6 +1,12 @@
 name: vowel_plotter
 channels:
   - defaults
+  - conda-forge
 dependencies:
   - montreal-forced-aligner
-prefix: /home/Mark/.conda/envs/vowel_plotter
+  - matplotlib
+  - pandas
+  - python=3.10
+  - pip:
+    - praat-parselmouth
+prefix: /home/Mark/.conda/envs/vowel_plotter_temp2
