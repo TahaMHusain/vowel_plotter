@@ -15,12 +15,12 @@ Then set up your Python environment:
 conda env create -f environment.yml
 conda activate vowel_plotter
 ```
-You'll need to use `conda` to install `montreal-forced-aligner`. If the `environment.yml` file doesn't work, you can build the environment on your own:
-```commandline
-conda create -n vowel_plotter -c conda-forge python=3.10 montreal-forced-aligner matplotlib pandas
-conda activate vowel_plotter
-pip install praat-parselmouth
-```
+* You'll need to use `conda` to install `montreal-forced-aligner`. If the `environment.yml` file doesn't work, you can build the environment on your own:
+    ```commandline
+    conda create -n vowel_plotter -c conda-forge python=3.10 montreal-forced-aligner matplotlib pandas
+    conda activate vowel_plotter
+    pip install praat-parselmouth
+    ```
 You can then test the environment by running on sample data:
 ```commandline
 python vowel_plotter.py data/sample_vowels.wav
