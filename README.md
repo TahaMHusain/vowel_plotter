@@ -18,7 +18,7 @@ python vowel_plotter.py data/sample_vowels.wav
 ```
 
 After a minute or so, you should see a multicolored chart like this appear in a new window (and saved as `data/vowel_plot.png`):
-![Pretty cool, right?](http://github.com/TahaMHusain/vowel_plotter/blob/main/data/sample_plot.png)
+![Pretty cool, right?](http://github.com/TahaMHusain/vowel_plotter/blob/main/data/sample_plot.png?raw=true)
 
 
 
