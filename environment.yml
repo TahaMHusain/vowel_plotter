@@ -7,6 +7,6 @@ dependencies:
   - matplotlib>=3.7.0
   - pandas>=1.0
   - python>=3.10
-  - pip=23.0:
-    - praat-parselmouth=0.43
+  - pip>=22.3.1:
+    - praat-parselmouth==0.4.3
 prefix: /home/Mark/.conda/envs/vowel_plotter_temp2
