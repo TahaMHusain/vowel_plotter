@@ -3,15 +3,20 @@ from pathlib import Path
 from parselmouth import praat, Sound
 
 
-def get_formants(sound: Sound):
+def get_formants(sound: Sound) -> tuple[list]:
+    """
+    Uses Praat's `To Formant (burg)` function to calculate formant values over time
+    :param sound: Praat sound object
+    :return: tuple: 4 lists - one for each formant series calculated (F0, F1, F2, F3)
+    """
 
-    f0min = 100 # 75 Hz default
-    f0max = 500 # 300 Hz default
+    f0min = 100  # Might cause problems depending on your voice - 75 Hz default
+    f0max = 500  # Might cause problems depending on your voice - 300 Hz default
     timestep = 0.0025
-    num_formants = 5
+    num_formants = 5  # We're only grabbing 3 formants (F0, F1, F2, F3), but apparently Praat subtracts this by 1
     formant_ceiling = 5000
     window_length = 0.025
-    preemphasis = 50
+    preemphasis = 50  # No idea what this does
 
     point_process = praat.call(sound, "To PointProcess (periodic, cc)", f0min, f0max)
 
