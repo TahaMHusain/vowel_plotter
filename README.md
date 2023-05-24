@@ -54,9 +54,9 @@ It can take some time - half an hour, maybe longer. `montreal-forced-aligner` is
 
 If it really seems stuck or you don't want to wait, you can make the environment yourself:
 ```commandline
-    conda create -n vowel_plotter -c conda-forge python=3.10 montreal-forced-aligner matplotlib pandas
-    conda activate vowel_plotter
-    pip install praat-parselmouth
+conda create -n vowel_plotter -c conda-forge python=3.10 montreal-forced-aligner matplotlib pandas
+conda activate vowel_plotter
+pip install praat-parselmouth
 ```
 
 **After running `vowel_plotter.py`, the terminal asks for a password**
