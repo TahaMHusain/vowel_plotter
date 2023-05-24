@@ -46,4 +46,21 @@ Save the recording as a `.wav` file, then run `vowel_plotter.py` :
 python vowel_plotter.py path/to/recording.wav
 ```
 
+### Troubleshooting
 
+**After running `conda env create -f environment.yml`, terminal is stuck on "Solving environment:"**
+
+It can take some time - half an hour, maybe longer. `montreal-forced-aligner` is a big package!
+
+If it really seems stuck or you don't want to wait, you can make the environment yourself:
+```commandline
+    conda create -n vowel_plotter -c conda-forge python=3.10 montreal-forced-aligner matplotlib pandas
+    conda activate vowel_plotter
+    pip install praat-parselmouth
+```
+
+**After running `vowel_plotter.py`, the terminal asks for a password**
+
+I'm not sure why this happens, but I believe it's related to Postgres SQL used by `montreal-forced-aligner`. The password prompt may be because of 
+pre-existing Postgres settings on your machine, or perhaps due to lack of admin privileges (if on a school or work machine, for example). Unfortunately,
+I don't know of a solution; try running on a different machine.
