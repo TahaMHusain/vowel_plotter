@@ -30,6 +30,5 @@ def draw_plot(df: pd.DataFrame):
     ax.yaxis.set_label_position('right')
     ax.xaxis.set_label_position('top')
 
-    plt.savefig('data/vowel_plot.png')
-
+    plt.savefig('data/vowel_plot.png', format='png')
     plt.show()
