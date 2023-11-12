@@ -1,6 +1,6 @@
 # Vowel Plotter
 
-Extract and plot the F1 and F2 frequencies from a recording of speech.
+Extract and plot the F1 and F2 frequencies from a recording of speech
 
 ### How to Run
 
