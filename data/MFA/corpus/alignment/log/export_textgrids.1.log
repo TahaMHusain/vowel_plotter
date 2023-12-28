@@ -1,7 +1,0 @@
-Exporting TextGrids for Workflow ID: 3
-Output directory: data/corpus2_aligned
-Output format: long_textgrid
-Frame shift: 0.01
-Include original text: False
-Clean up textgrids: True
-Done!

@@ -1,1 +1,0 @@
-/home/Mark/.conda/envs/vowel_plotter/bin/postgres "-D" "/home/Mark/Documents/MFA/pg_mfa_global" "-F" "-p" "5433"

@@ -1,9 +1,0 @@
-/home/Mark/.conda/envs/vowel_plotter/bin/gmm-boost-silence --boost=1.25 1 /home/Mark/Documents/MFA/corpus/monophone/12.mdl - 
-LOG (gmm-boost-silence[5.5.1016]:main():gmmbin/gmm-boost-silence.cc:93) Boosted weights for 5 pdfs, by factor of 1.25
-/home/Mark/.conda/envs/vowel_plotter/bin/gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=10 --retry-beam=40 --careful=false - ark,s,cs:/home/Mark/Documents/MFA/corpus/monophone/fsts.1.1.ark 'ark,s,cs:add-deltas scp,s,cs:"/home/Mark/Documents/MFA/corpus/corpus/split3/feats.1.1.scp" ark:- |' ark:/home/Mark/Documents/MFA/corpus/monophone/ali.1.1.ark ark,t:- 
-LOG (gmm-boost-silence[5.5.1016]:main():gmmbin/gmm-boost-silence.cc:103) Wrote model to -
-add-deltas scp,s,cs:/home/Mark/Documents/MFA/corpus/corpus/split3/feats.1.1.scp ark:- 
-LOG (gmm-align-compiled[5.5.1016]:main():gmmbin/gmm-align-compiled.cc:127) 1-1
-LOG (gmm-align-compiled[5.5.1016]:main():gmmbin/gmm-align-compiled.cc:135) Overall log-likelihood per frame is -74.3531 over 3543 frames.
-LOG (gmm-align-compiled[5.5.1016]:main():gmmbin/gmm-align-compiled.cc:137) Retried 0 out of 1 utterances.
-LOG (gmm-align-compiled[5.5.1016]:main():gmmbin/gmm-align-compiled.cc:139) Done 1, errors on 0

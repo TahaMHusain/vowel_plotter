@@ -1,5 +1,0 @@
-/home/Mark/.conda/envs/vowel_plotter/bin/gmm-acc-stats-ali /home/Mark/Documents/MFA/corpus/monophone/23.mdl 'ark,s,cs:add-deltas scp,s,cs:"/home/Mark/Documents/MFA/corpus/corpus/split3/feats.1.1.scp" ark:- |' ark,s,cs:/home/Mark/Documents/MFA/corpus/monophone/ali.1.1.ark /home/Mark/Documents/MFA/corpus/monophone/23.1.1.acc 
-add-deltas scp,s,cs:/home/Mark/Documents/MFA/corpus/corpus/split3/feats.1.1.scp ark:- 
-LOG (gmm-acc-stats-ali[5.5.1016]:main():gmmbin/gmm-acc-stats-ali.cc:112) Done 1 files, 0 with errors.
-LOG (gmm-acc-stats-ali[5.5.1016]:main():gmmbin/gmm-acc-stats-ali.cc:115) Overall avg like per frame (Gaussian only) = -73.178 over 3543 frames.
-LOG (gmm-acc-stats-ali[5.5.1016]:main():gmmbin/gmm-acc-stats-ali.cc:123) Written accs.

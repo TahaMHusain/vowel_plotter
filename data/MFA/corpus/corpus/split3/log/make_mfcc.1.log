@@ -1,8 +1,0 @@
-/home/Mark/.conda/envs/vowel_plotter/bin/extract-segments --min-segment-length=0.1 scp:/home/Mark/Documents/MFA/corpus/corpus/split3/wav.1.scp /home/Mark/Documents/MFA/corpus/corpus/split3/segments.1.scp ark:- 
-/home/Mark/.conda/envs/vowel_plotter/bin/copy-feats --compress=true ark:- ark,scp:/home/Mark/Documents/MFA/corpus/corpus/split3/feats.1.ark,/home/Mark/Documents/MFA/corpus/corpus/split3/feats.1.scp 
-/home/Mark/.conda/envs/vowel_plotter/bin/compute-mfcc-feats --use-energy=false --dither=1 --energy-floor=0 --num-ceps=13 --num-mel-bins=23 --cepstral-lifter=22 --preemphasis-coefficient=0.97 --frame-shift=10 --frame-length=25 --low-freq=20 --high-freq=7800 --sample-frequency=16000 --allow-downsample=true --allow-upsample=true --snip-edges=true ark,s,cs:- ark,t:- 
-sox WARN rate: rate clipped 1 samples; decrease volume?
-sox WARN dither: dither clipped 1 samples; decrease volume?
-LOG (extract-segments[5.5.1016]:main():featbin/extract-segments.cc:194) Successfully processed 1 lines out of 1 in the segments file. 
-LOG (compute-mfcc-feats[5.5.1016]:main():featbin/compute-mfcc-feats.cc:185)  Done 1 out of 1 utterances.
-LOG (copy-feats[5.5.1016]:main():featbin/copy-feats.cc:143) Copied 1 feature matrices.

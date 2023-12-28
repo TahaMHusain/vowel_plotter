@@ -1,2 +1,0 @@
-/home/Mark/.conda/envs/vowel_plotter/bin/ali-to-phones --ctm-output --frame-shift=0.01 /home/Mark/Documents/MFA/corpus/alignment/final.mdl ark,s,cs:/home/Mark/Documents/MFA/corpus/alignment/ali.1.1.ark - 
-LOG (ali-to-phones[5.5.1016]:main():bin/ali-to-phones.cc:134) Done 1 utterances.

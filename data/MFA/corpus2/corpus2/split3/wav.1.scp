@@ -1,1 +1,0 @@
-1 sox "data/corpus2/speaker2.wav" -t wav -b 16 -r 16000 - |
